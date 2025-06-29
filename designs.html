@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Designs | Kizito Okoro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Kizito Okoro</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designs.html" class="active">Designs</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="designs-hero">
+        <div class="container">
+            <h1>My Design Portfolio</h1>
+            <p>Explore my creative work across different design categories</p>
+        </div>
+    </section>
+
+    <section class="design-categories">
+        <div class="container">
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All Works</button>
+                <button class="filter-btn" data-category="logo">Logo Design</button>
+                <button class="filter-btn" data-category="print">Print Design</button>
+                <button class="filter-btn" data-category="ui">UI/UX Design</button>
+            </div>
+
+            <div class="designs-grid">
+                <div class="design-item" data-category="logo">
+                    <img src="assets/images/logo1.jpg" alt="Logo Design 1">
+                    <div class="design-overlay">
+                        <h3>Corporate Branding</h3>
+                        <p>Logo Design</p>
+                        <a href="#" class="view-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="design-item" data-category="logo">
+                    <img src="assets/images/logo2.jpg" alt="Logo Design 2">
+                    <div class="design-overlay">
+                        <h3>Startup Identity</h3>
+                        <p>Logo Design</p>
+                        <a href="#" class="view-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="design-item" data-category="print">
+                    <img src="assets/images/print1.jpg" alt="Print Design 1">
+                    <div class="design-overlay">
+                        <h3>Business Cards</h3>
+                        <p>Print Design</p>
+                        <a href="#" class="view-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="design-item" data-category="print">
+                    <img src="assets/images/print2.jpg" alt="Print Design 2">
+                    <div class="design-overlay">
+                        <h3>Product Packaging</h3>
+                        <p>Print Design</p>
+                        <a href="#" class="view-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="design-item" data-category="ui">
+                    <img src="assets/images/ui1.jpg" alt="UI Design 1">
+                    <div class="design-overlay">
+                        <h3>E-commerce App</h3>
+                        <p>UI/UX Design</p>
+                        <a href="#" class="view-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="design-item" data-category="ui">
+                    <img src="assets/images/ui2.jpg" alt="UI Design 2">
+                    <div class="design-overlay">
+                        <h3>Dashboard Interface</h3>
+                        <p>UI/UX Design</p>
+                        <a href="#" class="view-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-envelope"></i> Kizchidera@icloud.com</p>
+                    <p><i class="fas fa-phone"></i> +234 816 980 6632</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/2348169806632" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/realkizitookoro" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/realkizitookoro" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://pinterest.com/realkizitookoro" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://youtube.com/realkizitookoro" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Kizito Okoro</h3>
+                    <p>Professional graphic designer specializing in logo design, print media, and UI/UX solutions that help brands stand out.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="designs.html">Designs</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for design tips and special offers</p>
+                    <form>
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kizito Okoro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
