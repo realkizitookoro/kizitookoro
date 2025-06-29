@@ -21,9 +21,13 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-   
 }
-
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
 .container {
     width: 90%;
     max-width: 1200px;
@@ -108,7 +112,7 @@ header {
     transition: var(--transition);
 }
 
-header.scrolled {
+header .scrolled {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
@@ -771,6 +775,7 @@ footer {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        z-index: 1001;
     }
     
     nav ul {
@@ -784,6 +789,7 @@ footer {
         align-items: center;
         justify-content: center;
         transition: var(--transition);
+        z-index: 1000;
     }
     
     nav ul.active {
@@ -811,6 +817,7 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 
 @media (max-width: 576px) {
     :root {

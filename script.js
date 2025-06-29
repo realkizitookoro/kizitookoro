@@ -1,51 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('nav ul');
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
-hamburger.addEventListener('click', function() {
-    this.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    
-    // Add force-silver class when menu is open
-    if (this.classList.contains('active')) {
-        this.classList.add('force-silver');
-    } else {
-        this.classList.remove('force-silver');
-        // Reapply scroll-based color if not scrolled
-        if (window.scrollY <= 50) {
-            this.classList.remove('scrolled');
-        }
-    }
-});
-    
-    // Close mobile menu when clicking a link
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+    const body = document.body;
+
+    hamburger.addEventListener('click', function() {
+        const isOpen = this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        body.classList.toggle('no-scroll');
+        this.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when clicking links
     document.querySelectorAll('nav ul li a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            body.classList.remove('no-scroll');
+            hamburger.setAttribute('aria-expanded', 'false');
         });
     });
 
-  // Header scroll effect
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    const hamburger = document.querySelector('.hamburger');
-    
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-    
-    // If hamburger menu is active (open), keep it silver
-    if (hamburger.classList.contains('active')) {
-        hamburger.classList.add('force-silver');
-    } else {
-        hamburger.classList.remove('force-silver');
-    }
-});
-    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
     // Testimonial slider
     if (document.querySelector('.testimonial-slider')) {
         const testimonials = document.querySelectorAll('.testimonial');
@@ -79,9 +67,7 @@ window.addEventListener('scroll', function() {
         
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
                 button.classList.add('active');
                 
                 const category = button.getAttribute('data-category');
@@ -105,14 +91,13 @@ window.addEventListener('scroll', function() {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const product = this.getAttribute('data-product');
-                const productName = this.parentElement.parentElement.querySelector('h3').textContent;
+                const productName = this.parentElement.parentElement.querySelector('h2').textContent;
                 const price = parseInt(this.parentElement.querySelector('.price').textContent.replace(/\D/g, ''));
                 
-                // Initialize Paystack
                 const handler = PaystackPop.setup({
-                    key: 'pk_test_your_paystack_public_key', // Replace with your Paystack public key
+                    key: 'pk_test_your_paystack_public_key',
                     email: 'Kizchidera@icloud.com',
-                    amount: price * 100, // Paystack amount is in kobo
+                    amount: price * 100,
                     currency: 'NGN',
                     ref: 'KIZ' + Math.floor(Math.random() * 1000000000 + 1),
                     metadata: {
@@ -120,9 +105,7 @@ window.addEventListener('scroll', function() {
                         product_name: productName
                     },
                     callback: function(response) {
-                        // On successful payment
                         alert('Payment complete! Download link has been sent to your email.');
-                        // Here you would typically send the download link to the customer's email
                     },
                     onClose: function() {
                         alert('Payment window closed.');
@@ -157,9 +140,6 @@ window.addEventListener('scroll', function() {
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Here you would typically send the form data to your server
-            // For demonstration, we'll just show an alert
             alert('Thank you for your message! I will get back to you soon.');
             form.reset();
         });
