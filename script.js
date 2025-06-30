@@ -34,31 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Testimonial slider
-    if (document.querySelector('.testimonial-slider')) {
-        const testimonials = document.querySelectorAll('.testimonial');
-        const dots = document.querySelectorAll('.dot');
-        let currentTestimonial = 0;
-        
-        function showTestimonial(index) {
-            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            testimonials[index].classList.add('active');
-            dots[index].classList.add('active');
-            currentTestimonial = index;
-        }
-        
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => showTestimonial(index));
-        });
-        
-        // Auto slide
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }, 5000);
-    }
     
     // Design category filter
     if (document.querySelector('.category-filter')) {
@@ -135,13 +110,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Form submission handling
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            form.reset();
-        });
-    });
 });
